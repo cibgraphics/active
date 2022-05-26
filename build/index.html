@@ -46,14 +46,14 @@
                   <canvas id="metricChart"></canvas>
                 </div>
                 <div class="button-group group-center">
-                  <button class="button active">Weight</button>
+                  <button class="button active">Steps</button>
                   <button class="button">BMI</button>
                   <button class="button">Fat</button>
                 </div>
               </div>
             </div>
           </div>
-          <h3>Latest Record</h3>
+          <h3>Latest Activity</h3>
           <div class="gridlex dashboard mb-48">
             <div class="col-4_md-6_sm-12">
               <div class="dash-component">
@@ -178,6 +178,7 @@
       <p></p>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
     <script src="/assets/js/app.min.js"></script>
     <script type="text/javascript">
       var colors = ['#00a7e1'];
@@ -191,11 +192,69 @@
               label: 'Weight',
               data: [255, 253, 251, 253, 250, 248, 253],
               fill: false,
-              borderColor: colors,
-              tension: 0.2,
-              backgroundColor: colors,
-              borderWidth: 3,
-              radius: 5,
+              borderColor: '#fff',
+              tension: 0,
+              backgroundColor: '#ff5100',
+              borderWidth: 2,
+              radius: 10,
+            }],
+            pointRadius: 10,
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false
+            },
+            annotation: {
+              annotations: {
+                line1: {
+                  type: 'line',
+                  yMin: 220,
+                  yMax: 220,
+                  borderColor: '#ff5100',
+                  borderWidth: 3,
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              suggestedMin: 180,
+              suggestedMax: 275,
+              ticks: {
+                min: 100,
+                color: 'white'
+              },
+              grid: {
+                color: '#666',
+              },
+            },
+            x: {
+              ticks: {
+                color: 'white'
+              },
+              grid: {
+                color: '#666',
+              },
+            }
+          }
+        }
+      });
+      
+      var metricChart = document.getElementById('metricChart');
+      myChart = new Chart(metricChart, {
+          type: 'line',
+          data: {
+            labels: ['5/1/22','5/2/22', '5/3/22', '5/4/22', '5/5/22', '5/6/22', '5/7/22'],
+            datasets: [{
+              label: 'Steps',
+              data: [13000, 12845, 11861, 18423, 14153, 3151, 10842],
+              fill: false,
+              borderColor: '#fff',
+              tension: 0,
+              backgroundColor: '#ff5100',
+              borderWidth: 2,
+              radius: 10,
             }],
             pointRadius: 10,
         },
@@ -208,48 +267,21 @@
           scales: {
             y: {
               ticks: {
+                min: 100,
+                color: 'white',
+                beginAtZero: true
+              },
+              grid: {
+                color: '#666',
+              },
+            },
+            x: {
+              ticks: {
                 color: 'white'
               },
-              //- grid: {
-              //-   borderColor: red,
-              //- },
-            },
-            x: {
-              ticks: { color: 'white' }
-            }
-          }
-        }
-      });
-      
-      var metricChart = document.getElementById('metricChart');
-      myChart = new Chart(metricChart, {
-          type: 'line',
-          data: {
-            labels: ['5/1/22','5/2/22', '5/3/22', '5/4/22', '5/5/22', '5/6/22', '5/7/22'],
-            datasets: [{
-              label: 'Weight',
-              data: [255, 253, 251, 253, 250, 248, 253],
-              fill: false,
-              borderColor: colors,
-              tension: 0.2,
-              backgroundColor: colors,
-              borderWidth: 3,
-              radius: 5,
-            }],
-            pointRadius: 10,
-        },
-        options: {
-          plugins: {
-            legend: {
-              display: false
-            },
-          },
-          scales: {
-            y: {
-              ticks: { color: 'white' }
-            },
-            x: {
-              ticks: { color: 'white' }
+              grid: {
+                color: '#666',
+              },
             }
           }
         }
