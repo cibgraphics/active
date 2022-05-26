@@ -1,0 +1,16 @@
+extends ../layouts/clean
+
+block content
+  .login-container
+    .text-center.mb-40
+      img(src="/assets/images/login-logo.svg")
+    form
+      h3.text-center Create Account
+      .field-group
+        +input('Email', 'email')
+        +input('Username')
+        +input('Password', 'password')
+        +input('Display Name')
+        .button-group.group-right
+          a(href="login.html") Login
+          button.button(type="submit") Create Account

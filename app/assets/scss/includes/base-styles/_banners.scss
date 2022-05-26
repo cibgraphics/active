@@ -1,0 +1,26 @@
+/*
+-----------------------------------------
+BANNERS
+-----------------------------------------
+*/
+
+.banner {
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 48px;
+
+  p {
+    color: var(--dark-text);
+    font-weight: var(--bold);
+    @include rem-size(16px);
+    text-align: center;
+  }
+
+  &.success {
+    background: var(--green);
+  }
+
+  &.error {
+    background: var(--primary)
+  }
+}

@@ -1,0 +1,68 @@
+/*
+-----------------------------------------
+CONTENT
+-----------------------------------------
+*/
+
+
+.dashboard {
+  .dash-component {
+    background: #28272C;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 10%);
+
+    .button {
+      @include rem-size(14px);
+      padding: 6px 24px;
+      background: transparent;
+      border-color: var(--blue);
+
+      &:hover, &.active {
+        background: var(--blue);
+        color: var(--white)
+      }
+    }
+  }
+}
+
+
+.metric {
+  display: flex;
+  align-items: center;
+  grid-gap: 32px;
+
+  .icon {
+    flex-shrink: 0;
+    color: var(--blue);
+    @include rem-size(48px);
+  }
+
+  .data {
+    flex: 1;
+  }
+
+  p {
+    margin-bottom: 0;
+    @include rem-size(16px);
+  }
+
+  .value {
+    @include rem-size(40px);
+    font-weight: var(--bold);
+
+    small {
+      @include rem-size(16px);
+      font-weight: var(--light);
+      margin-left: 8px;
+    }
+  }
+
+  .date {
+    color: var(--gray);
+  }
+}
+
+canvas {
+  max-height: 500px;
+}

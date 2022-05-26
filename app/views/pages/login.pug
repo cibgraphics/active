@@ -1,0 +1,17 @@
+extends ../layouts/clean
+
+block content
+  .login-container
+    .text-center.mb-40
+      img(src="/assets/images/login-logo.svg")
+    form
+      .field-group
+        h3.text-center Login
+        .banner.error
+          p Your username or password are incorrect.
+        +input('Username')
+        +input('Password', 'password')
+        .button-group.group-right
+          a(href="#0") Forgot Password
+          a(href="create-account.html") Create Account
+          button.button(type="submit") Login

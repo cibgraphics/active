@@ -1,0 +1,33 @@
+/*
+-----------------------------------------
+LOGIN
+-----------------------------------------
+*/
+
+.clean-container {
+  background: url('/assets/images/login.jpg') no-repeat center;
+  background-size: cover;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: var(--radius);
+  padding: 40px 20px 20px;
+  width: 100%;
+  max-width: 600px;
+
+  a {
+    @include rem-size(14px);
+    color: var(--white);
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

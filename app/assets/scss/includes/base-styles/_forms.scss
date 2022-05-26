@@ -1,0 +1,496 @@
+/*
+-----------------------------------------
+FORMS
+-----------------------------------------
+*/
+
+.grecaptcha-badge { visibility: hidden !important; }
+
+
+form {
+  margin: 10px 0 10px;
+}
+
+.field-group {
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  width: 100%;
+
+  label {
+    margin-bottom: -8px;
+  }
+
+  @include mq('phone-small') {
+    grid-template-columns: max-content 1fr;
+
+    .label {
+      text-align: right;
+    }
+
+    .form-submit {
+      grid-column-start: 2;
+    }
+  }
+}
+
+label, .fake-label {
+  display: block;
+  @include rem-size(16px);
+  color: var(--text-color);
+  margin-bottom: 4px;
+  line-height: 1.4em;
+  font-weight: var(--bold);
+}
+
+input, textarea, .faux-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid transparent;
+  @include rem-size(16px);
+  color: var(--gray);
+  border-radius: var(--radius); // For iOS
+  background: var(--white);
+  font-family: var(--font);
+  font-weight: var(--bold);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  }
+}
+
+textarea, .faux-textarea {
+  min-height: 200px;
+}
+
+
+select {
+  width: 100%;
+
+  option {
+
+  }
+}
+
+.required {
+  color: var(--primary);
+  margin-left: 2px;
+}
+
+
+
+
+/* Form Errors */
+
+.has-error {
+  input, select, textarea {
+    border-color: var(--primary);
+  }
+}
+
+.error-message {
+  color: var(--primary);
+  @include rem-size(12px);
+  margin-top: 4px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+/*
+-----------------------------------------
+FORM LAYOUT
+-----------------------------------------
+*/
+
+
+select {
+  appearance: none;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--primary);
+  padding: 13px 30px 14px 10px;
+  @include rem-size(12px);
+  color: var(--gray-90);
+  border-radius: 4px; // For iOS
+  font-family: var(--font);
+  display: block;
+  line-height: 1;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0.669872 0.5L9.33013 0.500001L5 5Z' fill='%23275D38'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 10px 6px;
+
+  option {
+    @include rem-size(16px);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--blue-50);
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  }
+
+  &:disabled {
+    border-color: var(--gray-50);
+    color: #ccc;
+  }
+}
+
+
+
+
+
+.input-group {
+  .radio, .checkbox {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.columns-2 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .radio, .checkbox {
+      margin-bottom: 0;
+    }
+  }
+
+  &.columns-3 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    .radio, .checkbox {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.input-collection {
+  margin-bottom: 24px;
+
+  .checkbox, .radio, .toggle {
+    margin-bottom: 12px;
+  }
+
+  .fake-label {
+    margin-bottom: 12px;
+  }
+}
+
+
+
+/*
+-----------------------------------------
+FORM ADDONS
+-----------------------------------------
+*/
+
+.input-has-icon {
+  position: relative;
+
+  input {
+    padding-right: 45px;
+  }
+
+  .input-icon {
+    @include rem-size(24px);
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: var(--gray-60);
+
+    &.search {
+      color: var(--gray-40);
+    }
+
+    &.search-person {
+      @include rem-size(18px);
+      color: var(--primary);
+      cursor: pointer;
+
+      &.not-active {
+        color: var(--gray-40);
+        cursor: auto;
+      }
+    }
+  }
+}
+
+
+
+/*
+-----------------------------------------
+INPUT SPECIAL TYPES
+-----------------------------------------
+*/
+
+
+/*  Example Markup */
+/*
+  <div class="input-collection">
+    <p class="fake-label">This is an input group</p>
+    <div class="checkbox">
+      <input type="checkbox" id="checkbox-1" checked="checked"/>
+      <label for="checkbox-1"><span class="label-container">Default Checkbox 1</span>
+      </label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" id="checkbox-2"/>
+      <label for="checkbox-2"><span class="label-container">Default Checkbox 2</span>
+      </label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" id="checkbox-3"/>
+      <label for="checkbox-3"><span class="label-container">Default Checkbox 3</span>
+      </label>
+    </div>
+  </div>
+  <div class="input-collection">
+    <p class="fake-label">This is an input group</p>
+    <div class="radio">
+      <input type="radio" name="radio-group" id="radio-1" checked="checked"/>
+      <label for="radio-1"><span class="label-container"><span class="inner">Default Radio 1</span></span></label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="radio-group" id="radio-2"/>
+      <label for="radio-2"><span class="label-container"><span class="inner">Default Radio 2</span></span></label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="radio-group" id="radio-3"/>
+      <label for="radio-3"><span class="label-container"><span class="inner">Default Radio 3</span></span></label>
+    </div>
+  </div>
+  <div class="input-collection">
+    <p class="fake-label">This is an input group</p>
+    <div class="toggle">
+      <input type="checkbox" id="toggle-1"/>
+      <label for="toggle-1"><span class="toggle-display"></span><span class="toggle-text right">I agree to this</span></label>
+    </div>
+  </div>
+*/
+
+.checkbox {
+  $checkbox-height: 20px;
+  
+  min-height: $checkbox-height;
+
+  label {
+    position: relative;
+    padding: 4px 0 0 35px;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      width: $checkbox-height;
+      height: $checkbox-height;
+      cursor: pointer;
+      position: absolute;
+      background: #fff;
+      left: 0;
+      top: 0;
+      border-radius: var(--radius);
+    }
+
+    &:after {
+      content: '';
+      width: 11px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      border: 4px solid #ccc;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+
+    &:hover::after {
+      opacity: 0.2;
+    }
+
+    .label-container {
+      @include rem-size(16px);
+      line-height: 2em;
+      margin-top: -9px;
+      display: block;
+      text-transform: none;
+    }
+  }
+
+  input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+
+    &:checked + label:after {
+      opacity: 1;
+      border-color: var(--primary);
+    }
+  }
+}
+
+.radio {
+  display: block;
+
+  label {
+    position: relative;
+    z-index: 2;
+    padding: 4px 0 0 35px;
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      background: #fff;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      width:  12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      background: #ccc;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 0.2;
+    }
+    
+    .label-container {
+      @include rem-size(16px);
+      line-height: 2em;
+      margin-top: -9px;
+      display: block;
+      text-transform: none;
+    }
+  }
+
+  input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+
+    &:checked + label:after {
+      opacity: 1;
+      background: var(--primary);
+    }
+  }
+}
+
+.toggle {
+  $toggle-height: 24px !default;
+  $toggle-width: 50px !default;
+
+  label {
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  input {
+    position: absolute;
+    margin-left: -9999px;
+
+    & + label  .toggle-display {
+      padding: 2px;
+      width: $toggle-width;
+      height: $toggle-height + 4;
+      border-radius: $toggle-height;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      margin: 0 10px 0 0;
+      flex-shrink: 0;
+
+      &:before, &:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        content: "";
+      }
+
+      &:before {
+        right: 1px;
+        background: var(--gray);
+        height: $toggle-height;
+        border-radius: $toggle-height;
+        transition: background 0.4s;
+      }
+
+      &:after {
+        width: $toggle-height;
+        height: $toggle-height;
+        background: var(--white);
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        transition: margin 0.4s;
+      }
+    }
+
+    &:checked + label .toggle-display:before {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    &:checked + label .toggle-display:after {
+      margin-left: 25px;
+    }
+
+    &:focus + label .toggle-display {
+    }
+
+    &:disabled + label .toggle-display:before {
+      
+    }
+
+    &:disabled:checked + label .toggle-display:before {
+    }
+
+    &:disabled + label .toggle-display:after {
+    }
+  }
+
+  .toggle-text {
+    @include rem-size(16px);
+    color: var(--text-color);
+    line-height: 1;
+    margin-top: -4px;
+  }
+}
+
+
+
+

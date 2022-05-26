@@ -1,0 +1,35 @@
+include ../partials/mixins.pug
+
+doctype html
+html(lang='en-US', dir='ltr')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+
+    meta(name="robots", content="NOINDEX, NOFOLLOW")
+
+    title Kahoa Active
+
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, minimum-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+    meta(name='application-name', content='Vanilla5 Project')
+    meta(name='msapplication-tooltip', content='Vanilla5')
+    meta(name='msapplication-config', content='/ieconfig.xml')
+
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&display=swap' rel='stylesheet')
+
+    link(href='/assets/css/style.css', rel='stylesheet', media='screen')
+
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', href='/assets/images/app-icons/apple-touch-icon.png')
+
+  body
+    block layout
+
+    script(src='/assets/js/app.min.js')
+
+    block js

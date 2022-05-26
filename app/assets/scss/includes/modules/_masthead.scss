@@ -1,0 +1,47 @@
+/*
+-----------------------------------------
+MASTHEAD
+-----------------------------------------
+*/
+
+
+.site-masthead { 
+  background: var(--black);
+  padding: 20px;
+  border-bottom: 2px solid var(--blue);
+  display: flex;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // position: sticky;
+  // top: 0;
+  // z-index: 10;
+
+  @include mq('phone-wide') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header-nav {
+  ul {
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+  }
+
+  a {
+    @include rem-size(14px);
+    color: var(--white);
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  .button {
+    padding: 6px 36px;
+  }
+}

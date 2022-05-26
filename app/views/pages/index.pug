@@ -1,0 +1,172 @@
+extends ../layouts/main
+
+block js
+  script(type="text/javascript").
+
+    var colors = ['#00a7e1'];
+
+    var goalChart = document.getElementById('goalChart');
+    myChart = new Chart(goalChart, {
+        type: 'line',
+        data: {
+          labels: ['5/1/22','5/2/22', '5/3/22', '5/4/22', '5/5/22', '5/6/22', '5/7/22'],
+          datasets: [{
+            label: 'Weight',
+            data: [255, 253, 251, 253, 250, 248, 253],
+            fill: false,
+            borderColor: colors,
+            tension: 0.2,
+            backgroundColor: colors,
+            borderWidth: 3,
+            radius: 5,
+          }],
+          pointRadius: 10,
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          },
+        },
+        scales: {
+          y: {
+            ticks: {
+              color: 'white'
+            },
+            //- grid: {
+            //-   borderColor: red,
+            //- },
+          },
+          x: {
+            ticks: { color: 'white' }
+          }
+        }
+      }
+    });
+
+    var metricChart = document.getElementById('metricChart');
+    myChart = new Chart(metricChart, {
+        type: 'line',
+        data: {
+          labels: ['5/1/22','5/2/22', '5/3/22', '5/4/22', '5/5/22', '5/6/22', '5/7/22'],
+          datasets: [{
+            label: 'Weight',
+            data: [255, 253, 251, 253, 250, 248, 253],
+            fill: false,
+            borderColor: colors,
+            tension: 0.2,
+            backgroundColor: colors,
+            borderWidth: 3,
+            radius: 5,
+          }],
+          pointRadius: 10,
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          },
+        },
+        scales: {
+          y: {
+            ticks: { color: 'white' }
+          },
+          x: {
+            ticks: { color: 'white' }
+          }
+        }
+      }
+    });
+
+
+
+block content
+
+  section.container
+    .content
+
+      .gridlex.dashboard.mb-80
+        .col-6_sm-12
+          .dash-component
+            h3 Goal Progress
+            canvas#goalChart
+            
+        .col-6_sm-12
+          .dash-component
+            h3 History
+            .mb-24
+              canvas#metricChart
+            .button-group.group-center
+              button.button.active Weight
+              button.button BMI
+              button.button Fat
+            
+      h3 Latest Record
+      .gridlex.dashboard.mb-48
+        .col-4_md-6_sm-12
+          .dash-component
+            .metric
+              .icon
+                i.icon-scale
+              .data
+                p.value 224
+                  small lbs
+                p.date June 12, 2022
+        .col-4_md-6_sm-12
+          .dash-component
+            .metric
+              .icon
+                i.icon-running
+              .data
+                p.value 92
+                  small mins of activity
+                p.date June 12, 2022
+        .col-4_md-6_sm-12
+          .dash-component
+            .metric
+              .icon
+                i.icon-shoe
+              .data
+                p.value 13,746
+                  small steps
+                p.date June 12, 2022
+        .col-6_sm-12
+          .dash-component
+            .metric
+              .icon
+                i.icon-measure
+              .data
+                p.value 30.0
+                  small bmi
+                p.date June 12, 2022
+        .col-6_sm-12
+          .dash-component
+            .metric
+              .icon
+                i.icon-body-fat
+              .data
+                p.value 24%
+                  small body fat
+                p.date June 12, 2022
+
+  +modal('modal-log-activity', 'Log Activity')
+    form 
+      +input('Date')
+
+      hr
+
+      .gridlex
+        .col-6_sm-12
+          +input('Weight')
+        .col-6_sm-12
+          +input('BMI')
+        .col-6_sm-12
+          +input('Fat Percentage')
+        .col-6_sm-12
+          +input('Minutes of Activity')
+        .col-6_sm-12
+          +input('Steps')
+    .button-group.group-right
+      a(href="#0" data-micromodal-close='' aria-label='Close this dialog window') Cancel
+      button.button Submit
+      

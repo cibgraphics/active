@@ -1,0 +1,163 @@
+/*
+-----------------------------------------
+TYPOGRAPHY
+-----------------------------------------
+*/
+
+
+/*  Basics */
+
+a {
+  color: var(--link-color);
+  @include transition();
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-light);
+  }
+}
+
+p {
+  @include rem-size(16px);
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 1.5em;
+  font-weight: var(--light);
+
+  @include mq('tablet') {
+    @include rem-size(18px);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.light {
+    font-weight: var(--light);
+  }
+
+  &.medium {
+    font-weight: var(--normal);
+  }
+
+  &.bold {
+    font-weight: var(--bold);
+  }
+}
+
+b, strong {
+  font-weight: var(--bold);
+}
+
+.primary {
+  color: var(--primary);
+}
+
+pre {
+  padding: 16px;
+  background: rgba(var(--gray-rgb), .2);
+  border-radius: var(--radius);
+  margin-bottom: 1.2em;
+  overflow-x: auto;
+
+  code {
+    color: var(--white);
+    line-height: 1.5;
+    @include rem-size(16px);
+  }
+}
+
+
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+
+  li {
+    color: var(--text-color);
+    line-height: 1.3em;
+    margin-bottom: 8px;
+    font-weight: var(--normal);
+    @include rem-size(16px);
+
+    @include mq('tablet') {
+      @include rem-size(18px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.light {
+    li {
+      font-weight: var(--light);
+    }
+  }
+}
+
+ul {
+  list-style: disc;
+}
+
+.bullet-colored {
+  li {
+    &::marker {
+      color: var(--primary);
+    }
+  }
+}
+
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--white);
+  margin: 100px 0;
+}
+
+
+/* Headers */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  line-height: 1.4em;
+  margin-bottom: 12px;
+  font-weight: var(--bold);
+
+  &.light {
+    font-weight: var(--light);
+  }
+}
+
+h1 {
+  @include rem-size(40px);
+
+  @include mq(tablet) {
+    @include rem-size(60px);
+  }
+}
+
+h2 {
+  @include rem-size(28px);
+
+  @include mq(tablet) {
+    @include rem-size(35px);
+  }
+}
+
+h3 {
+  @include rem-size(22px);
+
+  @include mq(tablet) {
+    @include rem-size(28px);
+  }
+}
+
+h4 {
+  @include rem-size(18px);
+
+  @include mq(tablet) {
+    @include rem-size(21px);
+  }
+}
+
+

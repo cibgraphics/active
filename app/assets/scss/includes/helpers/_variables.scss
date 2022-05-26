@@ -1,0 +1,129 @@
+/*
+-----------------------------------------
+WIDTHS
+-----------------------------------------
+*/
+
+:root {
+  --radius:                     4px;
+
+  --site-width:                 1700px;
+  --site-padding:               20px;
+}
+
+
+/*
+-----------------------------------------
+COLORS
+-----------------------------------------
+*/
+
+:root {
+
+  // Primary Colors
+  --primary:                    #ff5100;
+  --white:                      #fff;
+  --black:                      #000;
+  --gray:                       #666666;
+  --gray-blue:                  #16161B;
+
+  // Secondary Colors
+  --blue:                       #00a7e1;
+  --green:                      #69c04b;
+
+
+  // RGB Colors
+  --primary-rgb:                255, 81, 0;
+  --gray-rgb:                   102, 102, 102;
+  --blue-rgb:                   0, 167, 225;
+  --green-rgb:                  105, 192, 75;
+
+  // HSL
+  --primary-hsl:                19, 100%;
+  --primary-l:                  50%;
+
+  // Altered Colors
+  --primary-dark:               hsl(var(--primary-hsl), calc(var(--primary-l) - 5%));
+  --primary-light:              hsl(var(--primary-hsl), calc(var(--primary-l) + 5%));
+
+  // Normalize Common Colors
+  --text-color:                 var(--white);
+  --link-color:                 var(--primary);
+  --dark-text:                  var(--black);
+
+  // Text Select
+  --select-background:          var(--primary);
+  --select-text:                var(--white);
+
+  // Placeholder
+  --placeholder:                var(--primary);
+}
+
+
+/*
+-----------------------------------------
+SPACING
+-----------------------------------------
+*/
+
+
+$space:                     20px;
+$space-xxxs:                0.25 * $space;
+$space-xxs:                 0.375 * $space;
+$space-xs:                  0.5 * $space;
+$space-sm:                  0.75 * $space;
+$space-md:                  1.25 * $space;
+$space-lg:                  1.5 * $space;
+$space-xl:                  2 * $space;
+$space-xxl:                 2.5 * $space;
+$space-xxxl:                3 * $space;
+
+
+/*
+-----------------------------------------
+FONTS
+-----------------------------------------
+*/
+
+// Font Family
+:root {
+  --font:                     'Poppins', sans-serif;
+
+  --light:                    300;
+  --normal:                   500;
+  --bold:                     600;
+}
+
+// Font Size
+$font-size:                   16px;
+
+
+/*
+-----------------------------------------
+BREAKPOINTS
+-----------------------------------------
+*/
+
+$breakpoints: (
+    "desktop-wide":         1248px,
+    "desktop":              1024px,
+    "desktop-small":        992px,
+    "tablet-wide":          850px,
+    "tablet":               768px,
+    "tablet-small":         720px,
+    "phone-wide":           600px,
+    "phone":                480px,
+    "phone-small":          400px
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == min {
+      $width: $width + 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
