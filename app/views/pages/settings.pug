@@ -32,7 +32,7 @@ block content
           .button-group.group-right
             a(href="#0").button Save
 
-        .component
+        .component.mb-48 
           h4.lined Password
           .gridlex
             .col-12
@@ -43,3 +43,43 @@ block content
               +input('Confirm New Password')
           .button-group.group-right
             a(href="#0").button Save
+
+        .component
+          .input-collection
+            p.fake-label This is an input group
+            .checkbox
+              input#checkbox-1(type='checkbox' checked='checked')
+              label(for='checkbox-1')
+                span.label-container Default Checkbox 1
+            .checkbox
+              input#checkbox-2(type='checkbox')
+              label(for='checkbox-2')
+                span.label-container Default Checkbox 2
+            .checkbox
+              input#checkbox-3(type='checkbox')
+              label(for='checkbox-3')
+                span.label-container Default Checkbox 3
+          .input-collection
+            p.fake-label This is an input group
+            .radio
+              input#radio-1(type='radio' name='radio-group' checked='checked')
+              label(for='radio-1')
+                span.label-container
+                  span.inner Default Radio 1
+            .radio
+              input#radio-2(type='radio' name='radio-group')
+              label(for='radio-2')
+                span.label-container
+                  span.inner Default Radio 2
+            .radio
+              input#radio-3(type='radio' name='radio-group')
+              label(for='radio-3')
+                span.label-container
+                  span.inner Default Radio 3
+          .input-collection
+            p.fake-label This is an input group
+            .toggle
+              input#toggle-1(type='checkbox')
+              label(for='toggle-1')
+                span.toggle-display
+                span.toggle-text.right I agree to this
