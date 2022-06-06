@@ -43,6 +43,10 @@ p {
   &.bold {
     font-weight: var(--bold);
   }
+
+  &.small {
+    font-size: .6rem !important;
+  }
 }
 
 b, strong {
@@ -114,6 +118,12 @@ hr {
   margin: 100px 0;
 }
 
+hr.small {
+  border: 0;
+  border-bottom: 1px solid var(--white);
+  margin: 20px 0;
+}
+
 
 /* Headers */
 
@@ -125,6 +135,12 @@ h1, h2, h3, h4, h5, h6 {
 
   &.light {
     font-weight: var(--light);
+  }
+
+  &.lined {
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--white);
+    margin-bottom: 24px;
   }
 }
 

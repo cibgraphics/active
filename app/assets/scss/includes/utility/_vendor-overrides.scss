@@ -46,13 +46,17 @@ VENDOR OVERRIDES
     border: 3px solid var(--black);
   }
 
-  a {
-    color: var(--white);
+  .button-group {
+    a {
+      color: var(--white);
 
-    &:hover {
-      color: var(--primary);
+      &:hover {
+        color: var(--primary);
+      }
     }
   }
+
+  
 
   hr {
     margin: 40px 0;

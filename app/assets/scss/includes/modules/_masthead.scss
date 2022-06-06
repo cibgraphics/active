@@ -10,26 +10,22 @@ MASTHEAD
   padding: 20px;
   border-bottom: 2px solid var(--blue);
   display: flex;
-  grid-gap: 20px;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  grid-gap: 20px;
   // position: sticky;
   // top: 0;
   // z-index: 10;
-
-  @include mq('phone-wide') {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
+
 .header-nav {
+  margin-left: auto;
+  display: none;
+
   ul {
     display: flex;
     align-items: center;
-    grid-gap: 20px;
+    grid-gap: 35px;
   }
 
   a {
@@ -43,5 +39,123 @@ MASTHEAD
 
   .button {
     padding: 6px 36px;
+  }
+}
+
+
+.overlay {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.25);
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-nav-icon {
+  color: var(--white);
+  cursor: pointer;
+  @include rem-size(36px);
+  margin-left: auto;
+  @include transition();
+
+  &:hover {
+    color: var(--primary);
+  }
+
+  @include mq('tablet') {
+    display: none;
+  }
+}
+
+
+.close-nav {
+  color: var(--primary);
+  height: 32px;
+  width: 32px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 12px;
+  @include transition();
+
+  &:hover {
+    background: rgba(255,255,255,.2);
+  }
+
+  i {
+    @include rem-size(28px);
+  }
+}
+
+
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: var(--black);
+  padding: 20px;
+  z-index: 30;
+  opacity: 0;
+  width: var(--mobile-nav-width);
+  @include translate(var(--mobile-nav-width));
+  @include transition();
+
+  a, li, p {
+    color: var(--white);
+  }
+
+  a {
+    display: block;
+    padding: 10px;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  .site-logo {
+    display: none;
+  }
+}
+
+
+.show-nav {
+  .mobile-nav {
+    @include translate(0);
+    opacity: 1;
+  }
+
+  .overlay {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+}
+
+
+@include mq('tablet') {
+  .header-nav {
+    display: block;
+  }
+  .show-nav {
+    .mobile-nav {
+      @include translate(var(--mobile-nav-width));
+    }
+
+    .overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 }

@@ -1,0 +1,45 @@
+extends ../layouts/main
+
+block content
+
+  section.container
+    .content
+
+      .mw-750
+        h2.mb-48.text-center Settings
+
+        .component.mb-48          
+          h4.lined Starting Metrics
+          .banner.success
+            p Fields have been saved.
+          .gridlex
+            .col-6_sm-12
+              +input('Age')
+            .col-6_sm-12
+              +input('Weight')
+            .col-6_sm-12
+              +input('Height')
+          .button-group.group-right
+            a(href="#0").button Save
+
+        .component.mb-48 
+          h4.lined Account
+          .gridlex
+            .col-6_sm-12
+              +input('Username')
+            .col-6_sm-12
+              +input('Public Name')
+          .button-group.group-right
+            a(href="#0").button Save
+
+        .component
+          h4.lined Password
+          .gridlex
+            .col-12
+              +input('Current Password')
+            .col-12
+              +input('New Password')
+            .col-12
+              +input('Confirm New Password')
+          .button-group.group-right
+            a(href="#0").button Save

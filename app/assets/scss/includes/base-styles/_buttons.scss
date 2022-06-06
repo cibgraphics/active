@@ -33,6 +33,10 @@ BUTTONS
   @include mq('tablet') {
     @include rem-size(16px);
   }
+
+  &.small {
+    padding: 8px 20px;
+  }
 }
 
 .full-button {

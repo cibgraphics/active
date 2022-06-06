@@ -1,0 +1,302 @@
+extends ../layouts/main
+
+block content
+
+  section.container
+    .content
+
+      .mw-750
+        h2.mb-48.text-center Achievements
+
+        .achievements-total
+          p.value 13,444
+            span points
+          p.out-of 24 out of 54 Achievements
+
+        .component.mb-48          
+          h4.lined Logging Entries
+          ul.achievements.list-unstyled
+            -for (x=0; x<3; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Muscles
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Participating in Activities
+          ul.achievements.list-unstyled
+            -for (x=0; x<2; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Fitness
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+
+        .component.mb-48          
+          h4.lined Goals
+          ul.achievements.list-unstyled
+            -for (x=0; x<4; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Cup-Trophy
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Triathlon
+          ul.achievements.list-unstyled
+            -for (x=0; x<16; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Race-Finish
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Basic Distances
+          ul.achievements.list-unstyled
+            -for (x=0; x<3; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Running-Person
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+
+        .component.mb-48          
+          h4.lined Steps
+          ul.achievements.list-unstyled
+            -for (x=0; x<2; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Person-Climbing-Stairs
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Minutes of Activity
+          ul.achievements.list-unstyled
+            -for (x=0; x<2; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-StopWatch
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined % to target
+          ul.achievements.list-unstyled
+            -for (x=0; x<4; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Darts
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Super Distance Clubs
+          ul.achievements.list-unstyled
+            -for (x=0; x<3; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Winner-Badge
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+        .component.mb-48          
+          h4.lined Swimming
+          ul.achievements.list-unstyled
+            -for (x=0; x<5; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Swimming-Person
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+        .component.mb-48          
+          h4.lined Running/WalkingBiking
+          ul.achievements.list-unstyled
+            -for (x=0; x<5; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Running-Person
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+
+
+        .component.mb-48          
+          h4.lined Biking
+          ul.achievements.list-unstyled
+            -for (x=0; x<5; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Cycling-Person
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+        .component.mb-48          
+          h4.lined Mental Health Goals
+          ul.achievements.list-unstyled
+            -for (x=0; x<3; x++)
+              - var earnedClass = (x == 0) ? 'earned' : '';
+              li(class= earnedClass)
+                .icon
+                  .icon-container
+                    i.icon-Yoga
+                .info
+                  h5 3-2-1!-GO
+                  p Log your first entry
+                  if x == 0
+                    .mt-12
+                      p.bold.small Earned 4 Times
+                      p.bold.small Last Earned: 99/99/9999
+                if x == 0
+                  .value
+                    p 
+                      span 300
+                      | Points
+

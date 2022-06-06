@@ -100,3 +100,33 @@ main {
   max-width: 750px;
   margin: 0 auto 70px;
 }
+
+
+
+
+.action-header {
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-20);
+
+  @include mq('phone-wide') {
+    display: flex;
+    align-items: flex-end;
+    grid-gap: 20px;
+
+    .header-info {
+      flex: 1;
+
+      h3 {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .header-action {
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+  }
+}

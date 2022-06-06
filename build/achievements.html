@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" x-data="{ show: false }">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>Kahoa Active</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="application-name" content="Vanilla5 Project">
+    <meta name="msapplication-tooltip" content="Vanilla5">
+    <meta name="msapplication-config" content="/ieconfig.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&amp;display=swap" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/assets/images/app-icons/apple-touch-icon.png">
+  </head>
+  <body :class="{ 'show-nav': show }">
+    <header class="site-masthead">
+      <div class="site-logo"><a href="/"><img src="/assets/images/app-logo.svg"></a></div>
+      <nav class="header-nav">
+        <ul class="list-unstyled">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="/settings.html">Settings</a></li>
+          <li><a href="/login.html">Logout</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon" @click="show = !show"><i class="icon-menu"></i></div>
+      <nav class="mobile-nav">
+        <div class="close-nav text-right" @click="show = false"><i class="icon-clear"></i></div>
+        <ul class="list-unstyled">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="/settings.html">Settings</a></li>
+          <li><a href="/login.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="overlay" @click="show = false"></div>
+    <main>
+      <section class="container">
+        <div class="content">
+          <div class="mw-750">
+            <h2 class="mb-48 text-center">Achievements</h2>
+            <div class="achievements-total">
+              <p class="value">13,444<span>points</span></p>
+              <p class="out-of">24 out of 54 Achievements</p>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Logging Entries</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Muscles"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Muscles"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Muscles"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Participating in Activities</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Fitness"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Fitness"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Goals</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cup-Trophy"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cup-Trophy"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cup-Trophy"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cup-Trophy"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Triathlon</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Race-Finish"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Basic Distances</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Steps</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Person-Climbing-Stairs"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Person-Climbing-Stairs"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Minutes of Activity</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-StopWatch"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-StopWatch"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">% to target</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Darts"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Darts"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Darts"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Darts"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Super Distance Clubs</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Winner-Badge"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Winner-Badge"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Winner-Badge"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Swimming</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Swimming-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Swimming-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Swimming-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Swimming-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Swimming-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Running/WalkingBiking</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Running-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Biking</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cycling-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cycling-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cycling-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cycling-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Cycling-Person"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="component mb-48">         
+              <h4 class="lined">Mental Health Goals</h4>
+              <ul class="achievements list-unstyled">
+                <li class="earned">
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Yoga"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                    <div class="mt-12">
+                      <p class="bold small">Earned 4 Times</p>
+                      <p class="bold small">Last Earned: 99/99/9999</p>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <p> <span>300</span>Points</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Yoga"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <div class="icon-container"><i class="icon-Yoga"></i></div>
+                  </div>
+                  <div class="info">
+                    <h5>3-2-1!-GO</h5>
+                    <p>Log your first entry</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p></p>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer=""></script>
+    <script src="/assets/js/app.min.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 include ../partials/mixins.pug
 
 doctype html
-html(lang='en-US', dir='ltr')
+html(lang='en-US', dir='ltr' x-data="{ show: false }")
   head
     meta(charset='utf-8')
     meta(name='description', content='')
@@ -27,8 +27,10 @@ html(lang='en-US', dir='ltr')
     link(rel='shortcut icon', href='/favicon.ico')
     link(rel='apple-touch-icon-precomposed', href='/assets/images/app-icons/apple-touch-icon.png')
 
-  body
+  body(:class="{ 'show-nav': show }")
     block layout
+
+    script(src='//unpkg.com/alpinejs' defer='')
 
     script(src='/assets/js/app.min.js')
 

@@ -1,0 +1,36 @@
+extends ../layouts/main
+
+block content
+
+  section.container
+    .content
+
+        h2.mb-48.text-center Activity History
+        p ** Editing should just show the modal again
+        .components-container
+          .component
+            h4.lined History
+
+            .nontable
+              table
+                thead
+                  tr
+                    th Date
+                    th Weight
+                    th Fat Percentage
+                    th Minutes of Activity
+                    th Steps
+                    th.text-center Mental Health Moment
+                    th 
+                tbody
+                  -for (x=0; x<5; x++)
+                    tr
+                      td(data-title="Date")
+                        a(href="#0") 99/99/9999
+                      td(data-title="Weight") 200lbs
+                      td(data-title="Fat Percentage") 12%
+                      td(data-title="Minutes of Activity") 34min
+                      td(data-title="Steps") 3,6484
+                      td(data-title="Mental Health Moment").text-center &check;
+                      td().text-right
+                        a(href="#0").button Edit

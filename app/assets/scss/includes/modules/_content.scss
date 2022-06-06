@@ -6,7 +6,7 @@ CONTENT
 
 
 .dashboard {
-  .dash-component {
+  .dash-component{
     background: #28272C;
     padding: 20px;
     height: 100%;
@@ -26,6 +26,13 @@ CONTENT
     }
   }
 }
+
+.component {
+    background: #28272C;
+    padding: 20px;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 10%);
+    border-radius: var(--radius);
+  }
 
 
 .metric {
@@ -66,4 +73,110 @@ CONTENT
 
 canvas {
   max-height: 500px;
+}
+
+
+
+.achievements-total {
+  margin-bottom: 48px;
+
+  p {
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: var(--light);
+  }
+
+  .value {
+    font-weight: var(--bold);
+    line-height: 1;
+    @include rem-size(60px);
+    color: var(--green);
+
+    span {
+      display: block;
+      font-weight: var(--light);
+      @include rem-size(25px);
+    }
+  }
+}
+
+.achievements {
+  grid-gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+
+  li {
+    display: flex;
+    grid-gap: 10px;
+    border: 1px solid #666;
+    border-radius: var(--radius);
+    padding: 12px;
+    align-items: center;
+
+    &.earned {
+      background: var(--green);
+      border-color: var(--green);
+
+      .icon-container {
+        color: var(--green);
+        background: rgba(255,255,255,1);
+      }
+
+      p, h5 {
+        color: var(--dark-text);
+      }
+    }
+  }
+
+  @include mq('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon, .value {
+    flex-shrink: 0;
+  }
+
+  .icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include rem-size(30px);
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  h5 {
+    margin-bottom: 0;
+  }
+
+  p {
+    @include rem-size(14px);
+    margin-bottom: 0;
+  }
+
+  p, h5, .icon-container {
+    color: #777;
+  }
+
+  .value {
+    align-self: flex-start;
+    text-align: center;
+
+    p {
+      @include rem-size(12px);
+    }
+
+    span {
+      display: block;
+      @include rem-size(16px);
+      font-weight: bold;
+    }
+  }
 }

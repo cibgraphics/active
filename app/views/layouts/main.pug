@@ -2,6 +2,7 @@ extends ../layouts/layout.pug
 
 block layout
   include ../partials/header.pug
+  .overlay(@click="show = false")
 
   main
     block content

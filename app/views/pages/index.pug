@@ -116,6 +116,10 @@ block content
   section.container
     .content
 
+
+      .button-group.group-right.mb-24
+        a(href="#0" data-micromodal-trigger="modal-log-activity").button Log Activity
+
       .gridlex.dashboard.mb-80
         .col-6_sm-12
           .dash-component
@@ -131,8 +135,13 @@ block content
               button.button.active Steps
               button.button BMI
               button.button Fat
-            
-      h3 Latest Activity
+      
+      .action-header   
+        .header-info
+          h3 Latest Activity
+        .header-action
+          .button-group
+            a(href="activity-history.html").button.small View Past Activity
       .gridlex.dashboard.mb-48
         .col-4_md-6_sm-12
           .dash-component
@@ -180,6 +189,10 @@ block content
                   small body fat
                 p.date June 12, 2022
 
+    h2 Modals
+    p
+      a(href="#0" data-micromodal-trigger="modal-current-body-metrics") Current Body Metrics
+
   +modal('modal-log-activity', 'Log Activity')
     form 
       +input('Date')
@@ -201,3 +214,19 @@ block content
       a(href="#0" data-micromodal-close='' aria-label='Close this dialog window') Cancel
       button.button Submit
       
+  +modal('modal-current-body-metrics', 'Current Body Metrics')
+    p Add your data. You can always update this later in settings.
+
+    form 
+      .gridlex
+        .col-6_sm-12
+          +input('Age')
+        .col-6_sm-12
+          +input('Weight')
+        .col-6_sm-12
+          +input('Height')
+        .col-6_sm-12
+          +input('Fat Percentage')
+
+      .button-group.group-right
+        button.button Set Metrics

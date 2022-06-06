@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" x-data="{ show: false }">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -19,19 +19,35 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="/assets/images/app-icons/apple-touch-icon.png">
   </head>
-  <body>
+  <body :class="{ 'show-nav': show }">
     <header class="site-masthead">
-      <div class="site-logo"><img src="/assets/images/app-logo.svg"></div>
+      <div class="site-logo"><a href="/"><img src="/assets/images/app-logo.svg"></a></div>
       <nav class="header-nav">
         <ul class="list-unstyled">
-          <li><a class="button" href="#0" data-micromodal-trigger="modal-log-activity">Log Activity</a></li>
-          <li><a href="#0">Logout</a></li>
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="/settings.html">Settings</a></li>
+          <li><a href="/login.html">Logout</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon" @click="show = !show"><i class="icon-menu"></i></div>
+      <nav class="mobile-nav">
+        <div class="close-nav text-right" @click="show = false"><i class="icon-clear"></i></div>
+        <ul class="list-unstyled">
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="leaderboards.html">Leaderboards</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="/settings.html">Settings</a></li>
+          <li><a href="/login.html">Logout</a></li>
         </ul>
       </nav>
     </header>
+    <div class="overlay" @click="show = false"></div>
     <main>
       <section class="container">
         <div class="content">
+          <div class="button-group group-right mb-24"><a class="button" href="#0" data-micromodal-trigger="modal-log-activity">Log Activity</a></div>
           <div class="gridlex dashboard mb-80">
             <div class="col-6_sm-12">
               <div class="dash-component">
@@ -53,7 +69,14 @@
               </div>
             </div>
           </div>
-          <h3>Latest Activity</h3>
+          <div class="action-header">  
+            <div class="header-info">
+              <h3>Latest Activity</h3>
+            </div>
+            <div class="header-action">
+              <div class="button-group"><a class="button small" href="activity-history.html">View Past Activity</a></div>
+            </div>
+          </div>
           <div class="gridlex dashboard mb-48">
             <div class="col-4_md-6_sm-12">
               <div class="dash-component">
@@ -112,6 +135,8 @@
             </div>
           </div>
         </div>
+        <h2>Modals</h2>
+        <p><a href="#0" data-micromodal-trigger="modal-current-body-metrics">Current Body Metrics</a></p>
       </section>
       <div class="modal micromodal-slide" aria-hidden="true" id="modal-log-activity">
         <div class="modal-overlay" tabindex="-1" data-micromodal-close="">
@@ -173,12 +198,61 @@
           </div>
         </div>
       </div>
+      <div class="modal micromodal-slide" aria-hidden="true" id="modal-current-body-metrics">
+        <div class="modal-overlay" tabindex="-1" data-micromodal-close="">
+          <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="modal-header">
+              <h2>Current Body Metrics</h2>
+              <button class="modal-close" aria-label="Close modal" data-micromodal-close=""></button>
+            </header>
+            <div class="modal-content modal-content">
+              <p>Add your data. You can always update this later in settings.</p>
+              <form> 
+                <div class="gridlex">
+                  <div class="col-6_sm-12">
+                    <div class="field">
+                      <label>Age
+                      </label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                  <div class="col-6_sm-12">
+                    <div class="field">
+                      <label>Weight
+                      </label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                  <div class="col-6_sm-12">
+                    <div class="field">
+                      <label>Height
+                      </label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                  <div class="col-6_sm-12">
+                    <div class="field">
+                      <label>Fat Percentage
+                      </label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-group group-right">
+                  <button class="button">Set Metrics</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="site-footer">
       <p></p>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer=""></script>
     <script src="/assets/js/app.min.js"></script>
     <script type="text/javascript">
       var colors = ['#00a7e1'];

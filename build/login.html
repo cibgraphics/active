@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" x-data="{ show: false }">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="/assets/images/app-icons/apple-touch-icon.png">
   </head>
-  <body>
+  <body :class="{ 'show-nav': show }">
     <div class="clean-container">
       <div class="login-container">
         <div class="text-center mb-40"><img src="/assets/images/login-logo.svg"></div>
@@ -39,13 +39,12 @@
               </label>
               <input type="password"/>
             </div>
-            <div class="button-group group-right"><a href="#0">Forgot Password</a><a href="create-account.html">Create Account</a>
-              <button class="button" type="submit">Login</button>
-            </div>
+            <div class="button-group group-right"><a href="create-account.html">Create Account</a><a href="#0">Forgot Password</a><a class="button" href="/">Login</a></div>
           </div>
         </form>
       </div>
     </div>
+    <script src="//unpkg.com/alpinejs" defer=""></script>
     <script src="/assets/js/app.min.js"></script>
   </body>
 </html>
