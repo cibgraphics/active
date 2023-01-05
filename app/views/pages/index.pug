@@ -3,8 +3,6 @@ extends ../layouts/main
 block js
   script(type="text/javascript").
 
-    var colors = ['#00a7e1'];
-
     var goalChart = document.getElementById('goalChart');
     myChart = new Chart(goalChart, {
         type: 'line',
@@ -14,9 +12,9 @@ block js
             label: 'Weight',
             data: [255, 253, 251, 253, 250, 248, 253],
             fill: false,
-            borderColor: '#fff',
+            borderColor: '#00ABDF',
             tension: 0,
-            backgroundColor: '#ff5100',
+            backgroundColor: '#00ABDF',
             borderWidth: 2,
             radius: 10,
           }],
@@ -33,7 +31,7 @@ block js
                 type: 'line',
                 yMin: 220,
                 yMax: 220,
-                borderColor: '#ff5100',
+                borderColor: '#00ABDF',
                 borderWidth: 3,
               }
             }
@@ -45,18 +43,18 @@ block js
             suggestedMax: 275,
             ticks: {
               min: 100,
-              color: 'white'
+              color: '#5F6062'
             },
             grid: {
-              color: '#666',
+              color: '#AEAEAE',
             },
           },
           x: {
             ticks: {
-              color: 'white'
+              color: '#5F6062'
             },
             grid: {
-              color: '#666',
+              color: '#AEAEAE',
             },
           }
         }
@@ -72,9 +70,9 @@ block js
             label: 'Steps',
             data: [13000, 12845, 11861, 18423, 14153, 3151, 10842],
             fill: false,
-            borderColor: '#fff',
+            borderColor: '#00ABDF',
             tension: 0,
-            backgroundColor: '#ff5100',
+            backgroundColor: '#00ABDF',
             borderWidth: 2,
             radius: 10,
           }],
@@ -90,19 +88,19 @@ block js
           y: {
             ticks: {
               min: 100,
-              color: 'white',
+              color: '#5F6062',
               beginAtZero: true
             },
             grid: {
-              color: '#666',
+              color: '#AEAEAE',
             },
           },
           x: {
             ticks: {
-              color: 'white'
+              color: '#5F6062'
             },
             grid: {
-              color: '#666',
+              color: '#AEAEAE',
             },
           }
         }

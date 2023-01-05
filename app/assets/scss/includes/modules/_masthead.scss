@@ -6,7 +6,7 @@ MASTHEAD
 
 
 .site-masthead { 
-  background: var(--black);
+  background: var(--white);
   padding: 20px;
   border-bottom: 2px solid var(--blue);
   display: flex;
@@ -30,7 +30,7 @@ MASTHEAD
 
   a {
     @include rem-size(14px);
-    color: var(--white);
+    color: var(--text-color);
 
     &:hover {
       color: var(--primary);
@@ -58,7 +58,7 @@ MASTHEAD
 }
 
 .mobile-nav-icon {
-  color: var(--white);
+  color: var(--text-color);
   cursor: pointer;
   @include rem-size(36px);
   margin-left: auto;
@@ -103,7 +103,7 @@ MASTHEAD
   top: 0;
   bottom: 0;
   overflow-y: auto;
-  background: var(--black);
+  background: var(--white);
   padding: 20px;
   z-index: 30;
   opacity: 0;
@@ -112,7 +112,7 @@ MASTHEAD
   @include transition();
 
   a, li, p {
-    color: var(--white);
+    color: var(--text-color);
   }
 
   a {

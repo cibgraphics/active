@@ -22,10 +22,11 @@ COLORS
 :root {
 
   // Primary Colors
-  --primary:                    #ff5100;
+  --primary:                    #00ABDF;
   --white:                      #fff;
   --black:                      #000;
   --gray:                       #666666;
+  --gray-light:                 #F5F5F5;
   --gray-blue:                  #16161B;
 
   // Secondary Colors
@@ -44,11 +45,11 @@ COLORS
   --primary-l:                  50%;
 
   // Altered Colors
-  --primary-dark:               hsl(var(--primary-hsl), calc(var(--primary-l) - 5%));
+  --primary-dark:               #0079C1;
   --primary-light:              hsl(var(--primary-hsl), calc(var(--primary-l) + 5%));
 
   // Normalize Common Colors
-  --text-color:                 var(--white);
+  --text-color:                 #5f6062;
   --link-color:                 var(--primary);
   --dark-text:                  var(--black);
 

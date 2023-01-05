@@ -5,7 +5,7 @@ LOGIN
 */
 
 .clean-container {
-  background: url('/assets/images/login.jpg') no-repeat center;
+  background: url('/assets/images/login.webp') no-repeat center;
   background-size: cover;
   flex: 1;
   display: flex;
@@ -15,16 +15,16 @@ LOGIN
 }
 
 .login-container {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white);
   backdrop-filter: blur(25px);
   border-radius: var(--radius);
   padding: 40px 20px 20px;
   width: 100%;
   max-width: 600px;
 
-  a {
+  a:not(.button) {
     @include rem-size(14px);
-    color: var(--white);
+    color: var(--primary);
 
     &:hover {
       color: var(--primary);

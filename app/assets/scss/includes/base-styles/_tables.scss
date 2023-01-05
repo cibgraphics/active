@@ -23,8 +23,9 @@ thead {
   }
 
   th {
-    background: var(--gray-50);
-    color: var(--white);
+    background: var(--gray-light);
+    color: var(--text-color);
+    @include rem-size(12px);
   }
 }
 
@@ -35,7 +36,7 @@ tfoot {
 
 tbody {
   tr {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #DFDFDF;
   }
 }
 
@@ -47,7 +48,7 @@ tr {
   }
 
   &:hover td {
-    background: rgba(255,255,255,.05);
+    background: rgba(0,0,0,.05);
   }
 }
 
@@ -68,6 +69,7 @@ th, td {
     background: transparent;
     border-color: var(--blue);
     text-decoration: none;
+    color: var(--primary);
 
     &:hover, &.active {
       background: var(--blue);
@@ -143,7 +145,7 @@ td {
     }
 
     tr {
-      border-bottom: 2px solid #aaa;
+      border-bottom: 2px solid #AEAEAE;
 
       &:last-child {
         border-bottom: none;
@@ -153,7 +155,7 @@ td {
     td { 
       /* Behave  like a "row" */
       border: none;
-      border-bottom: 1px solid #333; 
+      border-bottom: 1px solid #DFDFDF; 
       position: relative;
       padding-left: 50%; 
       white-space: normal;

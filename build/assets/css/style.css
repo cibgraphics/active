@@ -156,10 +156,11 @@ COLORS
 -----------------------------------------
 */
 :root {
-  --primary: #ff5100;
+  --primary: #00ABDF;
   --white: #fff;
   --black: #000;
   --gray: #666666;
+  --gray-light: #F5F5F5;
   --gray-blue: #16161B;
   --blue: #00a7e1;
   --green: #69c04b;
@@ -169,9 +170,9 @@ COLORS
   --green-rgb: 105, 192, 75;
   --primary-hsl: 19, 100%;
   --primary-l: 50%;
-  --primary-dark: hsl(var(--primary-hsl), calc(var(--primary-l) - 5%));
+  --primary-dark: #0079C1;
   --primary-light: hsl(var(--primary-hsl), calc(var(--primary-l) + 5%));
-  --text-color: var(--white);
+  --text-color: #5f6062;
   --link-color: var(--primary);
   --dark-text: var(--black);
   --select-background: var(--primary);
@@ -2040,7 +2041,7 @@ HEAD TAGS
 
 html, body {
   min-height: 100vh;
-  background: var(--gray-blue);
+  background: var(--gray-light);
 }
 
 html {
@@ -3558,7 +3559,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: var(--primary-light);
+  color: var(--primary-dark);
 }
 
 p {
@@ -3663,7 +3664,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   line-height: 1.4em;
   margin-bottom: 12px;
-  font-weight: var(--bold);
+  font-weight: var(--light);
 }
 h1.light, h2.light, h3.light, h4.light, h5.light, h6.light {
   font-weight: var(--light);
@@ -3815,8 +3816,10 @@ thead th:last-child {
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 thead th {
-  background: var(--gray-50);
-  color: var(--white);
+  background: var(--gray-light);
+  color: var(--text-color);
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 tfoot {
@@ -3825,14 +3828,14 @@ tfoot {
 }
 
 tbody tr {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #DFDFDF;
 }
 
 tr.disabled {
   opacity: 0.4;
 }
 tr:hover td {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 th, td {
@@ -3854,6 +3857,7 @@ th .button, td .button {
   background: transparent;
   border-color: var(--blue);
   text-decoration: none;
+  color: var(--primary);
 }
 th .button:hover, th .button.active, td .button:hover, td .button.active {
   background: var(--blue);
@@ -3972,7 +3976,7 @@ td {
     left: -9999px;
   }
   .nontable tr {
-    border-bottom: 2px solid #aaa;
+    border-bottom: 2px solid #AEAEAE;
   }
   .nontable tr:last-child {
     border-bottom: none;
@@ -3980,7 +3984,7 @@ td {
   .nontable td {
     /* Behave  like a "row" */
     border: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #DFDFDF;
     position: relative;
     padding-left: 50%;
     white-space: normal;
@@ -4076,7 +4080,7 @@ label, .fake-label {
 input, textarea, .faux-textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 2px solid transparent;
+  border: 1px solid #AEAEAE;
   font-size: 16px;
   font-size: 1rem;
   color: var(--gray);
@@ -4128,7 +4132,7 @@ select {
           appearance: none;
   width: 100%;
   background: var(--white);
-  border: 1px solid var(--primary);
+  border: 1px solid #AEAEAE;
   padding: 13px 30px 14px 10px;
   font-size: 12px;
   font-size: 0.75rem;
@@ -4290,6 +4294,7 @@ INPUT SPECIAL TYPES
   background: #fff;
   left: 0;
   top: 0;
+  border: 1px solid #AEAEAE;
   border-radius: var(--radius);
 }
 .checkbox label:after {
@@ -4297,7 +4302,7 @@ INPUT SPECIAL TYPES
   width: 11px;
   height: 5px;
   position: absolute;
-  top: 4px;
+  top: 5px;
   left: 3px;
   border: 4px solid #ccc;
   border-top: none;
@@ -4343,6 +4348,7 @@ INPUT SPECIAL TYPES
   cursor: pointer;
   position: absolute;
   background: #fff;
+  border: 1px solid #AEAEAE;
   left: 0;
   top: 0;
   border-radius: 50%;
@@ -4353,8 +4359,8 @@ INPUT SPECIAL TYPES
   height: 12px;
   border-radius: 50%;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 5px;
+  left: 5px;
   background: #ccc;
   opacity: 0;
 }
@@ -4399,6 +4405,7 @@ INPUT SPECIAL TYPES
   height: 28px;
   border-radius: 24px;
   display: block;
+  border: 1px solid #AEAEAE;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -4413,14 +4420,13 @@ INPUT SPECIAL TYPES
 .toggle input + label .toggle-display:before, .toggle input + label .toggle-display:after {
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
   content: "";
 }
 .toggle input + label .toggle-display:before {
   right: 1px;
-  background: var(--gray);
   height: 24px;
   border-radius: 24px;
   -webkit-transition: background 0.4s;
@@ -4429,19 +4435,19 @@ INPUT SPECIAL TYPES
 .toggle input + label .toggle-display:after {
   width: 24px;
   height: 24px;
-  background: var(--white);
-  top: 0;
-  left: 0;
+  background: var(--primary);
+  top: 1px;
+  left: 1px;
   border-radius: 100%;
   -webkit-transition: margin 0.4s;
   transition: margin 0.4s;
 }
 .toggle input:checked + label .toggle-display:before {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: #D7F5FE;
+  border-color: #D7F5FE;
 }
 .toggle input:checked + label .toggle-display:after {
-  margin-left: 25px;
+  margin-left: 22px;
 }
 .toggle .toggle-text {
   font-size: 16px;
@@ -4482,7 +4488,7 @@ MASTHEAD
 -----------------------------------------
 */
 .site-masthead {
-  background: var(--black);
+  background: var(--white);
   padding: 20px;
   border-bottom: 2px solid var(--blue);
   display: -webkit-box;
@@ -4510,7 +4516,7 @@ MASTHEAD
 .header-nav a {
   font-size: 14px;
   font-size: 0.875rem;
-  color: var(--white);
+  color: var(--text-color);
 }
 .header-nav a:hover {
   color: var(--primary);
@@ -4535,7 +4541,7 @@ MASTHEAD
 }
 
 .mobile-nav-icon {
-  color: var(--white);
+  color: var(--text-color);
   cursor: pointer;
   font-size: 36px;
   font-size: 2.25rem;
@@ -4586,7 +4592,7 @@ MASTHEAD
   top: 0;
   bottom: 0;
   overflow-y: auto;
-  background: var(--black);
+  background: var(--white);
   padding: 20px;
   z-index: 30;
   opacity: 0;
@@ -4597,7 +4603,7 @@ MASTHEAD
   transition: all 0.2s linear;
 }
 .mobile-nav a, .mobile-nav li, .mobile-nav p {
-  color: var(--white);
+  color: var(--text-color);
 }
 .mobile-nav a {
   display: block;
@@ -4641,7 +4647,7 @@ CONTENT
 -----------------------------------------
 */
 .dashboard .dash-component {
-  background: #28272C;
+  background: var(--white);
   padding: 20px;
   height: 100%;
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -4654,6 +4660,7 @@ CONTENT
   padding: 6px 24px;
   background: transparent;
   border-color: var(--blue);
+  color: var(--primary);
 }
 .dashboard .dash-component .button:hover, .dashboard .dash-component .button.active {
   background: var(--blue);
@@ -4661,7 +4668,7 @@ CONTENT
 }
 
 .component {
-  background: #28272C;
+  background: var(--white);
   padding: 20px;
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -4726,7 +4733,7 @@ canvas {
   line-height: 1;
   font-size: 60px;
   font-size: 3.75rem;
-  color: var(--green);
+  color: var(--primary);
 }
 .achievements-total .value span {
   display: block;
@@ -4748,7 +4755,7 @@ canvas {
   display: -ms-flexbox;
   display: flex;
   grid-gap: 10px;
-  border: 1px solid #666;
+  border: 1px solid #AEAEAE;
   border-radius: var(--radius);
   padding: 12px;
   -webkit-box-align: center;
@@ -4830,7 +4837,7 @@ LOGIN
 -----------------------------------------
 */
 .clean-container {
-  background: url("/assets/images/login.jpg") no-repeat center;
+  background: url("/assets/images/login.webp") no-repeat center;
   background-size: cover;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -4848,7 +4855,7 @@ LOGIN
 }
 
 .login-container {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white);
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
   border-radius: var(--radius);
@@ -4856,12 +4863,12 @@ LOGIN
   width: 100%;
   max-width: 600px;
 }
-.login-container a {
+.login-container a:not(.button) {
   font-size: 14px;
   font-size: 0.875rem;
-  color: var(--white);
+  color: var(--primary);
 }
-.login-container a:hover {
+.login-container a:not(.button):hover {
   color: var(--primary);
 }
 
@@ -4894,7 +4901,7 @@ VENDOR OVERRIDES
 }
 
 .modal-container {
-  background-color: var(--black);
+  background-color: var(--white);
   padding: 24px;
   max-width: 600px;
   width: 100%;
